@@ -1,4 +1,4 @@
-# Satoshi-Wallets
+# Satoshi Wallets
 
 ## GetBlocksData.py:
 This application enables the extraction of wallet addresses and public keys from Bitcoin blocks, listing them as text.
