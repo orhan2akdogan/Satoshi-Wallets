@@ -24,7 +24,7 @@ plt.grid(True)
 
 '''
 for i in range(SatoshiMaxWalletCount):
-    plt.annotate(str(i+1),  # Sıra numarasını metin olarak ekle; str(i+1) veya SatoshiWallet.iloc[i][:5]
+    plt.annotate(str(i+1),  
                  xy=(SatoshiPX.iloc[i], SatoshiPY.iloc[i]), xytext=(SatoshiPX.iloc[i], SatoshiPY.iloc[i]), 
                  color='black', 
                  fontsize=12,
