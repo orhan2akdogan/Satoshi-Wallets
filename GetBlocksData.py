@@ -2,9 +2,6 @@
 import requests
 
 def get_block_data(block_height):
-    """
-    Belirtilen blok yüksekliğindeki blok verilerini çeker.
-    """
     url = f"https://blockchain.info/block-height/{block_height}?format=json"
     response = requests.get(url)
     if response.status_code == 200:
@@ -15,9 +12,6 @@ def get_block_data(block_height):
         return None
 
 def get_block_info(start_block=0, end_block=100):
-    """
-    Belirtilen blok aralığındaki adres ve public key bilgilerini çeker.
-    """
     block_data = []
     for height in range(start_block, end_block):
         block = get_block_data(height)
@@ -34,10 +28,8 @@ def get_block_info(start_block=0, end_block=100):
             block_data.append(block_info)
     return block_data
 
-# İlk 100 blok için verileri çek
 block_info_list = get_block_info(1, 100) # max 4800
 
-# Formatlı çıktı yazdır
 for block_info in block_info_list:
     for address in block_info["addresses"]:
         print(f"{block_info['block']}\t" + f"{address['address']}\t"+ f"{address['public_key']}")
